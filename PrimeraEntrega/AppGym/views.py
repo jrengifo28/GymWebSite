@@ -4,5 +4,9 @@ from django.shortcuts import render
 # Create your views here.
 
 
+def show_main(request):
+    return render(request, "AppGym/main.html")
+
+
 def show_home(request):
-    return HttpResponse("Inicio")
+    return render(request, "AppGym/inicio.html")
