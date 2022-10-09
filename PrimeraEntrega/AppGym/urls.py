@@ -9,7 +9,4 @@ urlpatterns = [
     path('formularioCliente/', procesar_formulario_cliente),
     path('formularioEntrenador/', procesar_formulario_entrenador),
     path('formularioRutina/', procesar_formulario_rutina),
-    
-    
-    
 ]
