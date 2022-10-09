@@ -1,0 +1,44 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+</head>
+<body>
+    <h3>Ingresar Datos</h3>
+    <form action="/AppGym/FormularioCliente/" method="POST">{% csrf_token %}
+        <div class="mb-3">
+            <div class="input-group mb-3">
+                <input type="number" class="form-control" placeholder="Codigo" aria-label="Codigo" aria-describedby="basic-addon1">    
+            </div>
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Nombre Entrenador" aria-label="nombre de Entrenador" aria-describedby="basic-addon1">    
+            </div>
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Apellido Entrenador" aria-label="Apellido Entrenador" aria-describedby="basic-addon1">    
+            </div>
+            <div class="input-group mb-3">
+                <input type="number" class="form-control" placeholder="Numero de Telefono" aria-label="Numero de Telefono" aria-describedby="basic-addon1">    
+            </div>
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Direccion" 
+                aria-label="Direccion" aria-describedby="basic-addon1">    
+            </div>
+            <div class="input-group mb-3">
+                <input type="date" class="form-control" placeholder="Fecha de Cumpleaños" aria-label="Fecha de Cumpleaños" aria-describedby="basic-addon1">    
+            </div>
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Profesion" aria-label="Profesion" aria-describedby="basic-addon1">    
+            </div>
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Tipo de Entrenador" aria-label="Tipo de Entrenador" aria-describedby="basic-addon1">    
+            </div>
+
+              <input type="submit" value="Enviar">
+          </div>
+
+
+    </form>
+</body>
+</html>
