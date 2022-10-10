@@ -1,7 +1,7 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 from AppGym.models import Cliente, Entrenador, Rutina
-from AppGym.forms import ClienteForm, EntrenadorForm, RutinaForm
+from AppGym.forms import ClientesForm, EntrenadoresForm, RutinasForm
 
 # Create your views here.
 
@@ -19,19 +19,19 @@ def buscar_cliente(request):
         return render(request, "AppGym/busquedaCliente.html")
     if request.method == "POST":
         nombre_a_buscar = request.POST["nombre"]
-        resultados_busqueda = Cliente.objects.filter(nombre=nombre_a_buscar)
+        resultados_busqueda = ClientesForm.objects.filter(nombre=nombre_a_buscar)
         contexto = {"resultados": resultados_busqueda}
         return render(request, "AppGym/resultadoCliente.html", context=contexto)
 
 
 def procesar_formulario_cliente(request):
     if request.method == "GET":
-        mi_formulario = ClienteForm()
+        mi_formulario = ClientesForm()
         contexto = {"formulario": mi_formulario}
         return render(request, "AppGym/formularioCliente.html", context=contexto)
 
     if request.method == "POST":
-        mi_formulario = ClienteForm(request.POST)
+        mi_formulario = ClientesForm(request.POST)
         if mi_formulario.is_valid():
             datos_usuario = mi_formulario.cleaned_data
             nuevo_modelo = Cliente(
@@ -52,12 +52,12 @@ def procesar_formulario_cliente(request):
 
 def procesar_formulario_entrenador(request):
     if request.method == "GET":
-        mi_formulario = EntrenadorForm()
+        mi_formulario = EntrenadoresForm()
         contexto = {"formulario": mi_formulario}
         return render(request, "AppGym/formularioEntrenador.html", context=contexto)
 
     if request.method == "POST":
-        mi_formulario = EntrenadorForm(request.POST)
+        mi_formulario = EntrenadoresForm(request.POST)
         if mi_formulario.is_valid():
             datos_entrenador = mi_formulario.cleaned_data
             nuevo_modelo = Entrenador(
@@ -75,17 +75,17 @@ def procesar_formulario_entrenador(request):
             return render(request, "AppGym/formularioEntrenador.html")
 
         contexto = {"formulario": mi_formulario}
-        return render(request, "AppGym/formulario_cliente.html", context=contexto)
+        return render(request, "AppGym/formularioEntrenador.html", context=contexto)
 
 
 def procesar_formulario_rutina(request):
     if request.method == "GET":
-        mi_formulario = RutinaForm()
+        mi_formulario = RutinasForm()
         contexto = {"formulario": mi_formulario}
         return render(request, "AppGym/formularioRutina.html", context=contexto)
 
     if request.method == "POST":
-        mi_formulario = RutinaForm(request.POST)
+        mi_formulario = RutinasForm(request.POST)
         if mi_formulario.is_valid():
             datos_rutina = mi_formulario.cleaned_data
             nuevo_modelo = Rutina(
