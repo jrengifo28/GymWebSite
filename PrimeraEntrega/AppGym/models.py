@@ -5,7 +5,6 @@ from django.db import models
 
 
 class Cliente(models.Model):
-
     class Meta:
         verbose_name_plural = "Clientes"
 
@@ -21,7 +20,6 @@ class Cliente(models.Model):
 
 
 class Entrenador(models.Model):
-
     class Meta:
         verbose_name_plural = "Entrenadores"
 
@@ -39,7 +37,6 @@ class Entrenador(models.Model):
 
 
 class Rutina(models.Model):
-
     class Meta:
         verbose_name_plural = "Rutinas"
 

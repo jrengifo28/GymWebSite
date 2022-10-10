@@ -7,44 +7,67 @@ class Migration(migrations.Migration):
 
     initial = True
 
-    dependencies = [
-    ]
+    dependencies = []
 
     operations = [
         migrations.CreateModel(
-            name='Cliente',
+            name="Cliente",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('codigo', models.IntegerField()),
-                ('nombre', models.CharField(max_length=40)),
-                ('apellido', models.CharField(max_length=40)),
-                ('phone', models.IntegerField()),
-                ('direccion', models.CharField(max_length=60)),
-                ('cumple', models.DateField(null=True)),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("codigo", models.IntegerField()),
+                ("nombre", models.CharField(max_length=40)),
+                ("apellido", models.CharField(max_length=40)),
+                ("phone", models.IntegerField()),
+                ("direccion", models.CharField(max_length=60)),
+                ("cumple", models.DateField(null=True)),
             ],
         ),
         migrations.CreateModel(
-            name='Entrenador',
+            name="Entrenador",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('codigo', models.IntegerField()),
-                ('nombre', models.CharField(max_length=40)),
-                ('apellido', models.CharField(max_length=40)),
-                ('phone', models.IntegerField()),
-                ('direccion', models.CharField(max_length=40)),
-                ('cumple', models.DateField(null=True)),
-                ('profesion', models.CharField(max_length=40)),
-                ('tipo_entrenador', models.CharField(max_length=40)),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("codigo", models.IntegerField()),
+                ("nombre", models.CharField(max_length=40)),
+                ("apellido", models.CharField(max_length=40)),
+                ("phone", models.IntegerField()),
+                ("direccion", models.CharField(max_length=40)),
+                ("cumple", models.DateField(null=True)),
+                ("profesion", models.CharField(max_length=40)),
+                ("tipo_entrenador", models.CharField(max_length=40)),
             ],
         ),
         migrations.CreateModel(
-            name='Rutina',
+            name="Rutina",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('codigo_rutina', models.IntegerField()),
-                ('tipo_rutina', models.CharField(max_length=40)),
-                ('ubicacion', models.CharField(max_length=40)),
-                ('rutina', models.CharField(max_length=1000)),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("codigo_rutina", models.IntegerField()),
+                ("tipo_rutina", models.CharField(max_length=40)),
+                ("ubicacion", models.CharField(max_length=40)),
+                ("rutina", models.CharField(max_length=1000)),
             ],
         ),
     ]
