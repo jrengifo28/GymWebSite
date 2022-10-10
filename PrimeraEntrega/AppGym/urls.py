@@ -13,8 +13,10 @@ from AppGym.views import (
 urlpatterns = [
     path("main/", show_main),
     path("inicio/", show_home),
-    path("buscarCliente/",buscar_cliente),
+    path("buscarCliente/", buscar_cliente),
     path("formularioCliente/", procesar_formulario_cliente),
     path("formularioEntrenador/", procesar_formulario_entrenador),
     path("formularioRutina/", procesar_formulario_rutina),
+    path("ResultadoCliente/", buscar_cliente),
+    path("BusquedaCliente/", buscar_cliente),
 ]
