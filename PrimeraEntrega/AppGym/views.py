@@ -17,14 +17,16 @@ def show_main(request):
 def buscar_cliente(request):
     if request.method == "GET":
         return render(request, "AppGym/busquedaCliente.html")
+
     if request.method == "POST":
         nombre_a_buscar = request.POST["nombre"]
-        resultados_busqueda = ClientesForm.objects.filter(nombre=nombre_a_buscar)
+        resultados_busqueda = Cliente.objects.filter(nombre=nombre_a_buscar)
         contexto = {"resultados": resultados_busqueda}
         return render(request, "AppGym/resultadoCliente.html", context=contexto)
 
 
 def procesar_formulario_cliente(request):
+
     if request.method == "GET":
         mi_formulario = ClientesForm()
         contexto = {"formulario": mi_formulario}
