@@ -1,5 +1,3 @@
-app
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -19,17 +17,21 @@ app
             <div class="container-fluid">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link active" href="#">Iniciar Sesion</a>
+                        <a class="nav-link active" href="{% url 'Inicio' %}">Inicio</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Clientes</a>
+                        <a class="nav-link" href="{% url 'Cliente' %}">Clientes</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Entrenadores</a>
+                        <a class="nav-link" href="{% url 'Entrenador' %}">Entrenadores</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Rutinas</a>
+                        <a class="nav-link" href="{% url 'Rutina' %}">Rutinas</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'Buscar Cliente' %}">Buscar Cliente</a>
+                    </li>
+                    
                 </ul>
             </div>
         </nav>
