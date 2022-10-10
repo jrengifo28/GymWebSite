@@ -41,22 +41,44 @@ def procesar_formulario_cliente(request):
                 phone=datos_usuario["telefono"],
                 direccion=datos_usuario["direccion"],
                 cumple=datos_usuario["cumple"],
-                profesion=datos_usuario["profesion"],
-                tipo_entrenador=datos_usuario["tipo de entrenador"],
             )
             nuevo_modelo.save()
 
             return render(request, "AppGym/formularioCliente.html")
 
         contexto = {"formulario": mi_formulario}
-        return render(request, "AppGym/formulario_cliente.html", context=contexto)
+        return render(request, "AppGym/formularioCliente.html", context=contexto)
 
        
 
 
 def procesar_formulario_entrenador(request):
-    if request.method != "POST":
-        return render(request, "AppGym/formularioEntrenador.html")
+    if request.method == "GET":
+        mi_formulario = EntrenadorForm()
+        contexto = {"formulario": mi_formulario}
+        return render(request, "AppGym/formularioEntrenador.html", context=contexto)
+    
+    if request.method == "POST":
+        mi_formulario = EntrenadorForm(request.POST)
+        if mi_formulario.is_valid():
+            datos_entrenador = mi_formulario.cleaned_data
+            nuevo_modelo = Entrenador(
+                codigo=datos_entrenador["codigo"],
+                nombre=datos_entrenador["nombre"],
+                apellido=datos_entrenador["apellido"],
+                phone=datos_entrenador["telefono"],
+                direccion=datos_entrenador["direccion"],
+                cumple=datos_entrenador["cumple"],
+                profesion=datos_entrenador["profesion"],
+                tipo_entrenador=datos_entrenador["tipo de entrenador"],
+            )
+            nuevo_modelo.save()
+
+            return render(request, "AppGym/formularioEntrenador.html")
+
+        contexto = {"formulario": mi_formulario}
+        return render(request, "AppGym/formulario_cliente.html", context=contexto)
+            
 
 
 def procesar_formulario_rutina(request):
