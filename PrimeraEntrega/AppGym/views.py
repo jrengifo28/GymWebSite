@@ -50,8 +50,6 @@ def procesar_formulario_cliente(request):
         return render(request, "AppGym/formularioCliente.html", context=contexto)
 
        
-
-
 def procesar_formulario_entrenador(request):
     if request.method == "GET":
         mi_formulario = EntrenadorForm()
@@ -82,5 +80,28 @@ def procesar_formulario_entrenador(request):
 
 
 def procesar_formulario_rutina(request):
-    if request.method != "POST":
-        return render(request, "AppGym/formularioRutina.html")
+    if request.method == "GET":
+        mi_formulario = RutinaForm()
+        contexto = {"formulario": mi_formulario}
+        return render(request, "AppGym/formularioRutina.html", context=contexto)
+        
+    if request.method == "POST":
+        mi_formulario = RutinaForm(request.POST)
+        if mi_formulario.is_valid():
+            datos_rutina= mi_formulario.cleaned_data
+            nuevo_modelo = Rutina(
+                codigo=datos_rutina["codigo"],
+                estilo_rutina=datos_rutina["Estilo de rutina"],
+                ubicacion=datos_rutina["ubicacion"],
+                rutina=datos_rutina["rutina"],            
+            )
+            nuevo_modelo.save()
+
+            return render(request, "AppGym/formularioRutina.html")
+
+        contexto = {"formulario": mi_formulario}
+        return render(request, "AppGym/formularioRutina.html", context=contexto)
+                
+        
+        
+    
