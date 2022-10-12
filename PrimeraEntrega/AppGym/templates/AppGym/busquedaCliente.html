@@ -3,6 +3,7 @@
 {% load static %}
 
 {% block contenido_pagina %}
+<h2> Indique el nombre que quiere buscar</h2>
 <form action="AppGym/busquedaCliente/" method="POST">{% csrf_token %}
     <div class="container">
         <p>Nombre del Cliente: <br>
