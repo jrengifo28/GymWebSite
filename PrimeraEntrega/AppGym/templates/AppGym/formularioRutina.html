@@ -8,7 +8,10 @@
     <title>Formulario Rutina</title>
 </head>
 <body>
-    <h3>Ingresar Datos de la Rutina</h3>
+    <div class="container mt-5">
+        <h3>Ingresar Datos de la Rutina</h3>
+    </div>
+    <div class="container">
     <form action="/AppGym/formularioRutina/" method="POST">{% csrf_token %}
         <div class="mb-3">
             <div class="input-group mb-3">
@@ -28,8 +31,7 @@
 
               <input type="submit" value="Enviar">
           </div>
-
-
     </form>
+</div>
 </body>
 </html>

@@ -1,9 +1,8 @@
 from django.contrib import admin
-from django.urls import path, include
+from django.urls import path
 
 from AppGym.views import (
-    # show_home,
-    show_main,
+    inicio,
     buscar_cliente,
     procesar_formulario_cliente,
     procesar_formulario_entrenador,
@@ -11,8 +10,7 @@ from AppGym.views import (
 )
 
 urlpatterns = [
-    path("main/", show_main, name="Inicio"),
-    # path("inicio/", show_home),
+    path("", inicio, name="Inicio"),
     path("formularioCliente/", procesar_formulario_cliente, name="Cliente"),
     path("formularioEntrenador/", procesar_formulario_entrenador, name="Entrenador"),
     path("formularioRutina/", procesar_formulario_rutina, name="Rutina"),

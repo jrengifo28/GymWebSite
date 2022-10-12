@@ -1,9 +1,13 @@
-{% extends "AppGym/main.html" %}
+{% extends "AppGym/inicio.html" %}
 
 {% block contenido_busqueda %}
+
+<h3>Resultado de la busqueda</h3>
+
+{% for resultado in resultados %}
 <div class="container"> 
     <ul>
-        {% for resultado in resultados %}
+        
             <li>Cliente: {{resultado.nombre}} {{resultado.apellido}}</li>
         
         {% endfor %}

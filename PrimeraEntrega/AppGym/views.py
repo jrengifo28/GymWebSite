@@ -5,28 +5,10 @@ from AppGym.forms import ClientesForm, EntrenadoresForm, RutinasForm
 
 # Create your views here.
 
-
-def show_home(request):
+def inicio(request):
     return render(request, "AppGym/inicio.html")
 
-
-def show_main(request):
-    return render(request, "AppGym/main.html")
-
-
-def buscar_cliente(request):
-    if request.method == "GET":
-        return render(request, "AppGym/busquedaCliente.html")
-
-    if request.method == "POST":
-        nombre_a_buscar = request.POST["nombre"]
-        resultados_busqueda = Cliente.objects.filter(nombre=nombre_a_buscar)
-        contexto = {"resultados": resultados_busqueda}
-        return render(request, "AppGym/resultadoCliente.html", context=contexto)
-
-
 def procesar_formulario_cliente(request):
-
     if request.method == "GET":
         mi_formulario = ClientesForm()
         contexto = {"formulario": mi_formulario}
@@ -102,3 +84,15 @@ def procesar_formulario_rutina(request):
 
         contexto = {"formulario": mi_formulario}
         return render(request, "AppGym/formularioRutina.html", context=contexto)
+    
+def buscar_cliente(request):
+    if request.method == "GET":
+        return render(request, "AppGym/busquedaCliente.html")
+
+    if request.method == "POST":
+        nombre_a_buscar = request.POST["nombre"]
+        resultados_busqueda = Cliente.objects.filter(nombre=nombre_a_buscar)
+        contexto = {"resultados": resultados_busqueda}
+        return render(request, "AppGym/resultadoCliente.html", context=contexto)
+    
+   
