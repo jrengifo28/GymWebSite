@@ -4,13 +4,15 @@
 
 <h3>Resultado de la busqueda</h3>
 {% if resultado %}
-{% for resultado in resultados %}
+
 <div class="container"> 
-    <ul>
-        
-            <li>Cliente: {{resultado.nombre}} {{resultado.apellido}}</li>
-        
-        {% endfor %}
+    {% for resultado in resultados %}
+    <ul>       
+            <li>Cliente: {{resultado.nombre}} {{resultado.apellido}}</li> 
     </ul>
+    
+    {% endfor %}
 </div>
+
+{% endif %}
 {% endblock %}
