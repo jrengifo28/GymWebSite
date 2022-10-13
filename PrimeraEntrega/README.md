@@ -17,4 +17,5 @@ OBJETIVO:
 INSTRUCCIONES:
 
 1. Ingrese a la dirección 127.0.0.1:8000
-2.
+2. Si desea completar algun formulario puede acceder a traves de los botones de "Clientes" , "Entrenadores" y "Rutinas" en la barra superior de la pagina.
+3. Si quiere realizar una busqueda de algun cliente ingrese en "Click para buscar Cliente" y coloque el nombre del cliente que desea buscar.
