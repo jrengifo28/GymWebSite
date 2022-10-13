@@ -6,9 +6,9 @@
 {% if resultados %}
 
 <div class="container"> 
-    {% for resultado in resultados %}
+    {% for resultado_busqueda in resultados %}
     <ul>       
-            <li>Cliente: {{resultado.nombre}} {{resultado.apellido}}</li> 
+            <li>Cliente: {{resultado_busqueda.nombre}} {{resultado_busqueda.apellido}}</li> 
     </ul>
     
     {% endfor %}
