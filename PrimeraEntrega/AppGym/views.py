@@ -94,6 +94,6 @@ def buscar_cliente(request):
 
     if request.method == "POST":
         nombre_a_buscar = request.POST["nombre"]
-        resultados_busqueda = Cliente.objects.filter(nombre=nombre_a_buscar)
-        contexto = {"resultados": resultados_busqueda}
+        resultado_busqueda = Cliente.objects.filter(nombre=nombre_a_buscar)
+        contexto = {"resultados": resultado_busqueda}
         return render(request, "AppGym/resultadoCliente.html", context=contexto)
