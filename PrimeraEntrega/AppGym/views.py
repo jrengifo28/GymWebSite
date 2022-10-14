@@ -24,7 +24,7 @@ def procesar_formulario_cliente(request):
                 codigo=datos_usuario["codigo"],
                 nombre=datos_usuario["nombre"],
                 apellido=datos_usuario["apellido"],
-                phone=datos_usuario["telefono"],
+                phone=datos_usuario["phone"],
                 direccion=datos_usuario["direccion"],
                 cumple=datos_usuario["cumple"],
             )
@@ -50,7 +50,7 @@ def procesar_formulario_entrenador(request):
                 codigo=datos_entrenador["codigo"],
                 nombre=datos_entrenador["nombre"],
                 apellido=datos_entrenador["apellido"],
-                phone=datos_entrenador["telefono"],
+                phone=datos_entrenador["phone"],
                 direccion=datos_entrenador["direccion"],
                 cumple=datos_entrenador["cumple"],
                 profesion=datos_entrenador["profesion"],
@@ -76,7 +76,7 @@ def procesar_formulario_rutina(request):
             datos_rutina = mi_formulario.cleaned_data
             nuevo_modelo = Rutina(
                 codigo=datos_rutina["codigo"],
-                estilo_rutina=datos_rutina["Estilo de rutina"],
+                estilo_rutina=datos_rutina["estilo de rutina"],
                 ubicacion=datos_rutina["ubicacion"],
                 rutina=datos_rutina["rutina"],
             )

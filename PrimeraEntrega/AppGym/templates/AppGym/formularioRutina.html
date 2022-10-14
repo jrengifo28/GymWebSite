@@ -19,18 +19,18 @@
     <form action="/formularioRutina/" method="POST">{% csrf_token %}
         <div class="mb-3">
             <div class="input-group mb-3">
-                <input type="number" class="form-control" placeholder="Codigo de tu rutina" aria-label="Codigo de tu rutina" aria-describedby="basic-addon1">    
+                <input type="number" class="form-control" placeholder="Codigo de tu rutina" aria-label="Codigo de tu rutina" aria-describedby="basic-addon1" name="codigo">    
             </div>
             <div class="input-group mb-3">
-                <input type="text" class="form-control" placeholder="Tipo de Rutina" aria-label="Tipo de Rutina" aria-describedby="basic-addon1">    
+                <input type="text" class="form-control" placeholder="Tipo de Rutina" aria-label="Tipo de Rutina" aria-describedby="basic-addon1" name="estilo de rutina">    
             </div>
             <div class="input-group mb-3">
-                <input type="text" class="form-control" placeholder="Ubicacion" aria-label="Ubicacion" aria-describedby="basic-addon1">    
+                <input type="text" class="form-control" placeholder="Ubicacion" aria-label="Ubicacion" aria-describedby="basic-addon1" name="ubicacion">    
             </div>
             
             <div class="mb-3">
                 <label for="Textarea1" class="form-label">Rutina</label>
-                <textarea class="form-control" id="Textarea1" rows="3"></textarea>
+                <textarea class="form-control" id="Textarea1" rows="3"></textarea name="rutina">
               </div>
 
               <input type="submit" value="Enviar">
