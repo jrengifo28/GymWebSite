@@ -54,7 +54,7 @@ def procesar_formulario_entrenador(request):
                 direccion=datos_entrenador["direccion"],
                 cumple=datos_entrenador["cumple"],
                 profesion=datos_entrenador["profesion"],
-                tipo_entrenador=datos_entrenador["tipo de entrenador"],
+                tipo_entrenador=datos_entrenador["tipo_entrenador"],
             )
             nuevo_modelo.save()
 
@@ -76,7 +76,7 @@ def procesar_formulario_rutina(request):
             datos_rutina = mi_formulario.cleaned_data
             nuevo_modelo = Rutina(
                 codigo=datos_rutina["codigo"],
-                estilo_rutina=datos_rutina["estilo de rutina"],
+                tipo=datos_rutina["tipo"],
                 ubicacion=datos_rutina["ubicacion"],
                 rutina=datos_rutina["rutina"],
             )

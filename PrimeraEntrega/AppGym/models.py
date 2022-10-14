@@ -40,8 +40,8 @@ class Rutina(models.Model):
     class Meta:
         verbose_name_plural = "Rutinas"
 
-    codigo_rutina = models.IntegerField()
-    tipo_rutina = models.CharField(max_length=40)
+    codigo = models.IntegerField()
+    tipo = models.CharField(max_length=40)
     ubicacion = models.CharField(max_length=40)
     rutina = models.CharField(max_length=1000)
 
