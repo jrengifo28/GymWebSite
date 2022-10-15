@@ -22,7 +22,7 @@ class EntrenadoresForm(forms.Form):
 
 
 class RutinasForm(forms.Form):
-    codigo = forms.IntegerField()
-    tipo = forms.CharField(max_length=40)
+    codigo_rutina = forms.IntegerField()
+    tipo_rutina = forms.CharField(max_length=40)
     ubicacion = forms.CharField(max_length=40)
     rutina = forms.CharField(max_length=1000)

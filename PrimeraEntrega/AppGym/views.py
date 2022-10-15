@@ -75,8 +75,8 @@ def procesar_formulario_rutina(request):
         if mi_formulario.is_valid():
             datos_rutina = mi_formulario.cleaned_data
             nuevo_modelo = Rutina(
-                codigo=datos_rutina["codigo"],
-                tipo=datos_rutina["tipo"],
+                codigo_rutina=datos_rutina["codigo_rutina"],
+                tipo_rutina=datos_rutina["tipo_rutina"],
                 ubicacion=datos_rutina["ubicacion"],
                 rutina=datos_rutina["rutina"],
             )
