@@ -5,12 +5,18 @@
 <h3>Resultado de la busqueda</h3>
 {% if resultados %}
 
-<div class="container"> 
+<div class="container">
     {% for resultado_busqueda in resultados %}
-    <ul>       
-            <li>Cliente: {{resultado_busqueda.nombre}} {{resultado_busqueda.apellido}}</li> 
+    <ul>
+        <li>
+            <p>Cliente: {{resultado_busqueda.nombre}}</p>
+            <p>Apellido: {{resultado_busqueda.apellido}}</p>
+            <p>Teléfono: {{resultado_busqueda.phone}}</p>
+            <p>Dirección: {{resultado_busqueda.direccion}}</p>
+            <p>Fecha de nacimiento: {{resultado_busqueda.cumple}}</p>
+        </li>
     </ul>
-    
+
     {% endfor %}
 </div>
 
