@@ -1,8 +1,6 @@
 PRIMERA ENTREGA PROYECTO PYTHON (34625) - CODERHOUSE
 
-Autores:
-- Jimena Cambronero
-- Jexson Montilla
+Autor:
 - Jhonathan Rengifo Castillo
 
 OBJETIVO:
